@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto_Serif } from "next/font/google";
+import { Mooli } from "next/font/google";
 import { Providers } from "./providers";
 
-const roboto = Roboto_Serif({ subsets: ["latin"] });
+const roboto = Mooli({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "uree",

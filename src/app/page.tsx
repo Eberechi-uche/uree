@@ -1,8 +1,11 @@
+import HomeHeader from "@/components/Header/HomeHeader";
+import HomeSection from "@/components/section/HomeSection";
+
 export default function Home() {
   return (
     <main>
-      <h1> hello i am uree</h1>
-      <p> meet uree</p>
+      <HomeHeader />
+      <HomeSection />
     </main>
   );
 }
