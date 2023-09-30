@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function HomeHeader() {
@@ -30,26 +31,28 @@ export default function HomeHeader() {
           >
             <Heading>Meet uree your webpage assistant</Heading>
             <Text> Explore with clarity, click and discover</Text>
-            <Box
-              my={"6"}
-              p={"4"}
-              w={{
-                base: "70%",
-                lg: "50%",
-              }}
-              fontSize={{
-                base: "xs",
-                lg: "sm",
-              }}
-              bg={"#2ca5ce"}
-              color={"#fff"}
-              borderRadius={"full"}
-              fontWeight={"600"}
-              cursor={"pointer"}
-              boxShadow={"base"}
-            >
-              See uree in action
-            </Box>
+            <Link href={"/uree"}>
+              <Box
+                my={"6"}
+                p={"4"}
+                w={{
+                  base: "70%",
+                  lg: "50%",
+                }}
+                fontSize={{
+                  base: "xs",
+                  lg: "sm",
+                }}
+                bg={"#2ca5ce"}
+                color={"#fff"}
+                borderRadius={"full"}
+                fontWeight={"600"}
+                cursor={"pointer"}
+                boxShadow={"base"}
+              >
+                See uree in action
+              </Box>
+            </Link>
           </Flex>
           <Flex
             w={{
