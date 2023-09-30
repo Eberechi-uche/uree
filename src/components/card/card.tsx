@@ -4,6 +4,15 @@ import { Info } from "@/app/uree/page";
 import { Flex, Text } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useRef } from "react";
 
+export const defaulInfo: Info = {
+  right: "20px",
+  top: "",
+  bottom: "20px",
+  left: "",
+  details: "",
+
+  active: false,
+};
 type CardProps = {
   setDetails: Dispatch<SetStateAction<Info>>;
   info: string;

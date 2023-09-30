@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/card/card";
+import { Card, defaulInfo } from "@/components/card/card";
 import UreeAvatar from "@/components/ureeAvatar/Uree";
 import { Flex, Text } from "@chakra-ui/react";
 
@@ -15,15 +15,6 @@ export type Info = {
   active: boolean;
 };
 
-export const defaulInfo: Info = {
-  right: "20px",
-  top: "",
-  bottom: "20px",
-  left: "",
-  details: "",
-
-  active: false,
-};
 export default function Uree() {
   const [info, setInfo] = useState<Info>(defaulInfo);
   const [isActive, setIsActive] = useState(0);

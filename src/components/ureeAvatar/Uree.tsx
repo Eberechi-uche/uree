@@ -1,8 +1,9 @@
 "use client";
 
-import { Info, defaulInfo } from "@/app/uree/page";
+import { Info } from "@/app/uree/page";
 import { Box, Flex, Image, Text, Button } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { defaulInfo } from "../card/card";
 type Ureeprops = {
   info: Info;
   setDetails: Dispatch<SetStateAction<Info>>;
