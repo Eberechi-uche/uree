@@ -2,7 +2,7 @@
 
 import { Info, defaulInfo } from "@/app/uree/page";
 import { Box, Flex, Image, Text, Button } from "@chakra-ui/react";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 type Ureeprops = {
   info: Info;
   setDetails: Dispatch<SetStateAction<Info>>;
@@ -11,6 +11,10 @@ type Ureeprops = {
 };
 
 export default function UreeAvatar(props: Ureeprops) {
+  const [introduce, setIntroduce] = useState(false);
+  useEffect(() => {
+    if (introduce) setIntroduce(!introduce);
+  }, [props.info.active]);
   return (
     <Flex
       pos={"fixed"}
@@ -20,13 +24,13 @@ export default function UreeAvatar(props: Ureeprops) {
       top={props.info.top}
       bottom={props.info.bottom}
       transform={props.info.active ? "translateY(80px)" : ""}
-      //   flexDir={"column"}
-
       minW={"max-content"}
       maxW={"fit-content"}
-      //   minH={"200px"}
       flexWrap={"wrap"}
       zIndex={"4"}
+      onClick={() => {
+        if (!props.info.active) setIntroduce(!introduce);
+      }}
     >
       {props.info.active && (
         <Flex
@@ -54,12 +58,34 @@ export default function UreeAvatar(props: Ureeprops) {
           </Button>
         </Flex>
       )}
-      <Image
-        src={props.info.active ? "/awareState.svg" : "/ease.svg"}
-        alt={"uree page assisstant"}
-        boxSize={"70px"}
-        transition={"all 0.7s ease-in"}
-      />
+      {introduce && (
+        <>
+          <Text
+            bg={"#fff"}
+            color={"#000"}
+            px={"4"}
+            borderRadius={"full"}
+            h={"min-content"}
+            fontSize={"xs"}
+          >
+            Hello i'm uree.
+          </Text>
+          <Image
+            src={"/raisingHands.svg"}
+            alt={"uree page assisstant"}
+            boxSize={"60px"}
+            transition={"all 0.7s ease-in"}
+          />
+        </>
+      )}
+      {!introduce && (
+        <Image
+          src={props.info.active ? "/awareState.svg" : "/ease.svg"}
+          alt={"uree page assisstant"}
+          boxSize={"70px"}
+          transition={"all 0.7s ease-in"}
+        />
+      )}
     </Flex>
   );
 }

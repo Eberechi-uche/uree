@@ -45,9 +45,7 @@ export function Card(props: CardProps) {
       m={"5"}
       bgImage={props.image}
       backgroundSize={"cover"}
-      transition={"all 0.5s linear"}
-    >
-      <Text></Text>
-    </Flex>
+      transition={"width 0.5s ease-in"}
+    ></Flex>
   );
 }
