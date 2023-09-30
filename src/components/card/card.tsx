@@ -10,7 +10,7 @@ export const defaulInfo: Info = {
   bottom: "20px",
   left: "",
   details: "",
-
+  icon: "",
   active: false,
 };
 type CardProps = {
@@ -20,8 +20,9 @@ type CardProps = {
   isActive: number;
   id: number;
   opacity: string;
-  image: string;
+  image?: string;
   setOpacity: Dispatch<SetStateAction<string>>;
+  icon: string;
 };
 
 export function Card(props: CardProps) {
@@ -35,6 +36,7 @@ export function Card(props: CardProps) {
       bottom: bottom.toString(),
       details: props.info,
       active: true,
+      icon: props.icon,
     });
     props.setOpacity("0.1");
     props.setActive(props.id);
@@ -56,5 +58,46 @@ export function Card(props: CardProps) {
       backgroundSize={"cover"}
       transition={"width 0.5s ease-in"}
     ></Flex>
+  );
+}
+
+type ButtonsProps = {
+  text: string;
+  color: string;
+};
+export function Buttons(props: CardProps & ButtonsProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  function getElementPosition(e: React.MouseEvent) {
+    const { left, right, top, bottom } = ref.current!.getBoundingClientRect();
+    props.setDetails({
+      left: left.toString(),
+      right: right.toString(),
+      top: top.toString(),
+      bottom: bottom.toString(),
+      details: props.info,
+      active: true,
+      icon: props.icon,
+    });
+    props.setOpacity("0.1");
+    props.setActive(props.id);
+  }
+
+  return (
+    <Flex
+      cursor={"pointer"}
+      px={"4"}
+      py={"2"}
+      borderRadius={"full"}
+      onClick={getElementPosition}
+      opacity={props.id == props.isActive ? "1" : props.opacity}
+      ref={ref}
+      m={"5"}
+      border={"2px solid"}
+      bg={"white"}
+      borderColor={"#fff"}
+      color={props.color}
+    >
+      <Text> {props.text}</Text>
+    </Flex>
   );
 }

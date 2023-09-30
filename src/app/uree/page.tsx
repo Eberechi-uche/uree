@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, defaulInfo } from "@/components/card/card";
+import { Buttons, Card, defaulInfo } from "@/components/card/card";
 import UreeAvatar from "@/components/ureeAvatar/Uree";
 import { Flex, Text } from "@chakra-ui/react";
 
@@ -13,6 +13,7 @@ export type Info = {
   bottom: string;
   details: string;
   active: boolean;
+  icon: string;
 };
 
 export default function Uree() {
@@ -21,7 +22,7 @@ export default function Uree() {
   const [opacity, setOpacity] = useState("1");
   return (
     <Flex
-      bg={"gray.700"}
+      bg={"#fafafa"}
       minH={"100dvh"}
       p={"6"}
       justify={"center"}
@@ -45,6 +46,7 @@ export default function Uree() {
             id={4}
             setOpacity={setOpacity}
             image="/stevejobs.jpeg"
+            icon="/Msg.svg"
           />
           <Card
             setDetails={setInfo}
@@ -55,6 +57,7 @@ export default function Uree() {
             id={5}
             setOpacity={setOpacity}
             image="/picasso.jpeg"
+            icon="/Msg.svg"
           />
           <Card
             setDetails={setInfo}
@@ -65,6 +68,7 @@ export default function Uree() {
             id={3}
             setOpacity={setOpacity}
             image="/abraham.jpeg"
+            icon="/Msg.svg"
           />
           <Card
             setDetails={setInfo}
@@ -75,6 +79,7 @@ export default function Uree() {
             id={2}
             setOpacity={setOpacity}
             image="/lao.jpeg"
+            icon="/Msg.svg"
           />
           <Card
             setDetails={setInfo}
@@ -85,6 +90,45 @@ export default function Uree() {
             id={9}
             setOpacity={setOpacity}
             image="/yoda.jpeg"
+            icon="/Msg.svg"
+          />
+        </Flex>
+        <Flex>
+          <Buttons
+            setDetails={setInfo}
+            info="A success button"
+            isActive={isActive}
+            setActive={setIsActive}
+            opacity={opacity}
+            id={20}
+            setOpacity={setOpacity}
+            icon="/success.svg"
+            text="success"
+            color="green.500"
+          />
+          <Buttons
+            setDetails={setInfo}
+            info="A Delete button"
+            isActive={isActive}
+            setActive={setIsActive}
+            opacity={opacity}
+            id={20}
+            setOpacity={setOpacity}
+            icon="/delete.svg"
+            text="Delete"
+            color="red.500"
+          />
+          <Buttons
+            setDetails={setInfo}
+            info="A Like button"
+            isActive={isActive}
+            setActive={setIsActive}
+            opacity={opacity}
+            id={20}
+            setOpacity={setOpacity}
+            icon="/like.svg"
+            text="like"
+            color="blue.500"
           />
         </Flex>
       </Flex>

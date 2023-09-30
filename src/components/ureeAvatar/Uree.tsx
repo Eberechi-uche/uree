@@ -24,9 +24,10 @@ export default function UreeAvatar(props: Ureeprops) {
       left={props.info.left}
       top={props.info.top}
       bottom={props.info.bottom}
-      transform={props.info.active ? "translateY(80px)" : ""}
+      transform={props.info.active ? "translateY(40px)" : ""}
       minW={"max-content"}
       maxW={"fit-content"}
+      maxH={"fit-content"}
       flexWrap={"wrap"}
       zIndex={"4"}
       onClick={() => {
@@ -38,12 +39,14 @@ export default function UreeAvatar(props: Ureeprops) {
           p={"4"}
           borderRadius={"6"}
           w={"170px"}
-          h={"170px"}
+          h={"fit-content"}
           flexDir={"column"}
           bg={"#fff"}
           justify={"space-between"}
           transition={"all 0.7s ease-in"}
+          boxShadow={"sm"}
         >
+          <Image alt={"icon"} src={props.info.icon} boxSize={"15px"} />
           <Text fontSize={"xs"}>{props.info.details}</Text>
           <Button
             size={"xs"}
@@ -54,6 +57,7 @@ export default function UreeAvatar(props: Ureeprops) {
               props.setActive(0);
             }}
             colorScheme={"blackAlpha"}
+            my={"3"}
           >
             Done
           </Button>
@@ -83,7 +87,7 @@ export default function UreeAvatar(props: Ureeprops) {
         <Image
           src={props.info.active ? "/awareState.svg" : "/ease.svg"}
           alt={"uree page assisstant"}
-          boxSize={"70px"}
+          boxSize={"35px"}
           transition={"all 0.7s ease-in"}
         />
       )}
