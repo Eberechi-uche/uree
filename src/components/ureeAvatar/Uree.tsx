@@ -68,7 +68,7 @@ export default function UreeAvatar(props: Ureeprops) {
             h={"min-content"}
             fontSize={"xs"}
           >
-            Hello i'm uree.
+            Hello i am uree.
           </Text>
           <Image
             src={"/raisingHands.svg"}
