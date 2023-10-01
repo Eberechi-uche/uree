@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Mooli } from "next/font/google";
+import { Raleway } from "next/font/google";
 import { Providers } from "./providers";
 
-const roboto = Mooli({ weight: "400", subsets: ["latin"] });
+const roboto = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "uree",
