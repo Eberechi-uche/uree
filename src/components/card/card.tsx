@@ -1,6 +1,6 @@
 "use client";
 
-import { Info } from "@/app/uree/page";
+import { Info } from "@/app/Assistant/page";
 import { Flex, Text } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useRef } from "react";
 
