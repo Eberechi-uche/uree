@@ -5,13 +5,7 @@ import { useState } from "react";
 export default function HomeHeader() {
   return (
     <>
-      <Flex
-        bgGradient="linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%)"
-        p={"12"}
-        w={"100vw"}
-        justify={"center"}
-        minH={"70vh"}
-      >
+      <Flex bg={"black"} p={"12"} w={"100vw"} justify={"center"} minH={"100vh"}>
         <Flex
           color={"#fff"}
           w={"100%"}
@@ -29,9 +23,9 @@ export default function HomeHeader() {
             }}
             flexDir={"column"}
           >
-            <Heading>Meet uree your webpage assistant</Heading>
+            <Heading>Meet your webpage assistant</Heading>
             <Text> Explore with clarity, click and discover</Text>
-            <Link href={"/uree"}>
+            <Link href={"/Assistant"}>
               <Box
                 my={"6"}
                 p={"4"}
@@ -43,14 +37,14 @@ export default function HomeHeader() {
                   base: "xs",
                   lg: "sm",
                 }}
-                bg={"#2ca5ce"}
+                bg={"red.500"}
                 color={"#fff"}
                 borderRadius={"full"}
                 fontWeight={"600"}
                 cursor={"pointer"}
                 boxShadow={"base"}
               >
-                See uree in action
+                See the Assistant
               </Box>
             </Link>
           </Flex>
@@ -85,19 +79,6 @@ function HomeHeaderLHS() {
     >
       <Flex w={"100%"}>
         <InfoCard left="35%" text="hello i'm  uree" img="/awareState.svg" />
-        <InfoCard bottom="30%" text="i go anywhere" img="/astronault.svg" />
-        <InfoCard
-          right="0"
-          bottom="30%"
-          text=" info with a click"
-          img="/ease.svg"
-        />
-        <InfoCard
-          left="35%"
-          bottom="0"
-          text="always here"
-          img="/raisingHands.svg"
-        />
       </Flex>
     </Flex>
   );
@@ -140,7 +121,7 @@ function InfoCard(props: InfoCardProps) {
         src={props.img}
         boxSize={{
           base: "24",
-          lg: "32",
+          lg: "400px",
         }}
         border={"4px solid"}
         borderRadius={"full"}

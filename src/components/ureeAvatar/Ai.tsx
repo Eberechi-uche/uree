@@ -1,9 +1,9 @@
 "use client";
 
-import { Info } from "@/app/uree/page";
 import { Box, Flex, Image, Text, Button } from "@chakra-ui/react";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { defaulInfo } from "../card/card";
+import { Info } from "@/app/Assistant/page";
 type Ureeprops = {
   info: Info;
   setDetails: Dispatch<SetStateAction<Info>>;
@@ -11,7 +11,7 @@ type Ureeprops = {
   setOpacity: Dispatch<SetStateAction<string>>;
 };
 
-export default function UreeAvatar(props: Ureeprops) {
+export default function Ai(props: Ureeprops) {
   const [introduce, setIntroduce] = useState(false);
   useEffect(() => {
     if (introduce) setIntroduce(!introduce);
